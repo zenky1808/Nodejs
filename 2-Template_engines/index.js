@@ -1,5 +1,5 @@
 const express = require('express');
-
+const bodyParser = require('body-parser');
 const app = express();
 
 const port = 3000;
@@ -12,6 +12,9 @@ var users = [
 ]
 app.set('view engine', 'pug');
 app.set('views', './views');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', function (req,res){
 	res.render('index',{
@@ -33,6 +36,15 @@ app.get('/user/search', function(req, res){
 	res.render('user/index', {
 		users : fitleUser
 	});
+});
+
+app.get('/user/create', function(req, res){
+	res.render('user/create')
+});
+
+app.post('/user/create',function(req, res){
+	users.push(req.body);
+	res.redirect('/user');
 });
 
 app.listen(port ,function(){
