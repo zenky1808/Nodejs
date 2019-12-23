@@ -1,7 +1,9 @@
-h1 Create user
+extends ../layouts/common.pug
 
-a(href = "/user/create") New Create
-form(action = "/user/create" method = "POST")
-	label name
-	input(type = "text" name = "name")
-	button Create
+block content
+	h1 Create user
+	a(href = "/user/create") New Create
+	form(action = "/user/create" method = "POST")
+		label name
+		input(type = "text" name = "name")
+		button Create

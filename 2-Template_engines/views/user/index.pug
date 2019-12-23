@@ -1,12 +1,14 @@
-h1 user
-a(href = "/user/create") Create user
-form(action = "/user/search", method = "GET")
-	input(type = "text", name = "q")
-	button Search
+extends ../layouts/common.pug
 
-ul 
-	each user in users
-		li
-			span= user.name
-			span &nbsp;&nbsp;&nbsp;
-			a(href='/user/' + user.id) View
+block content
+	h1 user
+	a(href = "/user/create") Create user
+	form(action = "/user/search", method = "GET")
+		input(type = "text", name = "q")
+		button Search
+		ul 
+			each user in users
+				li
+					span= user.name
+					span &nbsp;&nbsp;&nbsp;
+					a(href='/user/' + user.id) View
