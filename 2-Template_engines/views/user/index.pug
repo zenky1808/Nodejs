@@ -1,14 +1,38 @@
 extends ../layouts/common.pug
 
 block content
-	h1 user
-	a(href = "/user/create") Create user
-	form(action = "/user/search", method = "GET")
-		input(type = "text", name = "q")
-		button Search
-		ul 
-			each user in users
-				li
-					span= user.name
-					span &nbsp;&nbsp;&nbsp;
-					a(href='/user/' + user.id) View
+    .center
+        h1 Users
+        span.mr-3 
+        a.btn.btn-primary(href="/user/create") New
+
+        .d-flex.align-items-center
+            form.ml-auto(action="/user/search", method="GET", class="d-flex")
+                input(type="text", name="q", class="form-control")
+                button(class="btn btn-primary ml-2") Search
+
+        table.table
+            tr
+               th Name
+               th Phone
+               th Actions
+
+            each user in users
+               tr
+                    td= user.name
+                    td= user.phone
+                    td
+                        a.btn.btn-light(href='/user/' + user.id) View
+                        a.btn.btn-light(href="/") Delete
+
+    //- div.center
+    //-     a(href = "/user/create") Create user
+    //-     form(action = "/user/search", method = "GET",class="form-ip")
+    //-         input(type = "text", name = "q")
+    //-         button Search
+    //-         ul 
+    //-             each user in users
+    //-                 li
+    //-                     span= user.name
+    //-                     span &nbsp;&nbsp;&nbsp;
+    //-                     a(href='/user/' + user.id) View

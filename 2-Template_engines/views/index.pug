@@ -1,2 +1,8 @@
-h1 Hello #{name}
-a(href = "/user") user list
+extends ./layouts/common
+
+block content
+	h1 Hello #{name}
+	h2
+		a(href = "/user") user list
+	p
+	//- img(src = "/images/rain.jpg")
