@@ -1,23 +1,16 @@
 {
   "users": [
     {
-      "name": "Lam Sung",
-      "id": "K7nSytD-"
-    },
-    {
       "name": "Toan",
       "phone": "0946695001",
-      "id": "tMDfWvRs"
+      "id": "tMDfWvRs",
+      "email": "th3anh1808@gmail.com",
+      "password": "123456"
     },
     {
       "name": "Tool",
       "phone": "0313253215",
       "id": "RWboJGgS"
-    },
-    {
-      "name": "Tool",
-      "phone": "0313253215",
-      "id": "eVMsbdTU"
     }
   ]
 }
